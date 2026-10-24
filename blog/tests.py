@@ -29,8 +29,8 @@ class BlogTests(TestCase):
 
     def test_post_str(self):
         """Пост показує свій заголовок як назву"""
-        self.assertEqual(str(self.published), 'Неправильний заголовок')
-        
+        self.assertEqual(str(self.published), 'Опублікований пост')
+
 
     def test_list_page_opens(self):
         """Головна сторінка відкривається"""
