@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static 'css/blog.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+    <div id="sidebar">
+        <h2>Мій блог</h2>
+        <p>Навчальний блог на Django для практичної з DevOps.</p>
+        <p><a href="{% url 'blog:post_list' %}">← Усі пости</a></p>
+    </div>
+</body>
+</html>

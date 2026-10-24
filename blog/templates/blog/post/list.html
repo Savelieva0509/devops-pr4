@@ -1,0 +1,16 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Мій блог{% endblock %}
+
+{% block content %}
+<h1>Мій блог</h1>
+{% for post in posts %}
+    <div class="post">
+        <h2><a href="{% url 'blog:post_detail' post.id %}">{{ post.title }}</a></h2>
+        <p class="date">Опубліковано {{ post.publish|date:"d.m.Y H:i" }}, автор {{ post.author }}</p>
+        {{ post.body|truncatewords:30|linebreaks }}
+    </div>
+{% empty %}
+    <p>Постів поки немає.</p>
+{% endfor %}
+{% endblock %}
